@@ -67,12 +67,12 @@ export const storeEmail = async (req,res)=>{
 export const verifyOtp = async (req,res)=>{
     try {
         const { otp } = req.body ;
-        // const email = req.cookies.email;
-        const email = res.cookie('email', email, {
-            httpOnly: true,
-            sameSite: 'None',
-            secure: true // only works on HTTPS; use false for localhost dev
-          });
+        const email = req.cookies.email;
+        // const email = res.cookie('email', email, {
+        //     httpOnly: true,
+        //     sameSite: 'None',
+        //     secure: true // only works on HTTPS; use false for localhost dev
+        //   });
           
         if(!otp){
             return res.status(400).json({
