@@ -67,7 +67,7 @@ export const storeEmail = async (req,res)=>{
 export const verifyOtp = async (req,res)=>{
     try {
         const { otp } = req.body ;
-        const email = req.cookie.email;
+        const email = req.cookies.email;
         // const email = res.cookie('email', email, {
         //     httpOnly: true,
         //     sameSite: 'None',
